@@ -28,7 +28,6 @@ public class DateTimeUtility {
         LocalTime localTime = LocalTime.parse(startTime);
         LocalDate today = LocalDate.now();
         LocalDate tomorrow = today.plusDays(1);
-        LocalDateTime now =LocalDateTime.of(today, localTime);
         DateTimeFormatter format2 = DateTimeFormatter.ofPattern("HH:mm:ss");
         if(frequency.toHours()>=24)
             return busDeparture;
