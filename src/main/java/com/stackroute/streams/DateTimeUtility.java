@@ -10,9 +10,9 @@ import java.util.List;
 
 public class DateTimeUtility {
     public List<String> getNextMonthWorkingDays(LocalDate today) {
-        if(today.getDayOfMonth()!=1){
+        if(today.getDayOfMonth()!=1)
             today=today.minusDays(today.getDayOfMonth()-1);
-        }
+
         LocalDate notToday=today.plusMonths(1);
         List<String> workday=new ArrayList<>();
         while (notToday.getMonth().compareTo(today.plusMonths(1).getMonth())==0){
@@ -29,11 +29,10 @@ public class DateTimeUtility {
         LocalDate today = LocalDate.now();
         LocalDate tomorrow = today.plusDays(1);
         LocalDateTime now =LocalDateTime.of(today, localTime);
-        System.out.println(now);
         DateTimeFormatter format2 = DateTimeFormatter.ofPattern("HH:mm:ss");
-        if(frequency.toHours()>=24){
+        if(frequency.toHours()>=24)
             return busDeparture;
-        }
+
         while(localTime.isBefore(LocalTime.MAX)&&!localTime.isBefore(LocalTime.parse(startTime))){
             if(today.compareTo(tomorrow)>=0){
                 break;
